@@ -1,6 +1,7 @@
 # blog
 
-> 个人博客
+> 个人博客源码
+https://murphycx94.github.io/
 
 ## Build Setup
 
