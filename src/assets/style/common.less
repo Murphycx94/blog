@@ -1,0 +1,40 @@
+/*
+* @Author: cx
+* @Date:   2017-05-31 11:41:40
+* @Last Modified by:   cx
+* @Last Modified time: 2017-05-31 14:23:30
+*/
+
+@import url(./data.less);
+
+*, *::after, *::before {
+	box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB, Microsoft YaHei, Arial, sans-serif;
+    line-height: 1
+}
+
+a {
+	text-decoration: none;
+	color: @baseBlue;
+	&:hover {
+		color: darken(@baseBlue, 10%);
+	}
+}
+
+h1, h2, h3, h4, h5, h6,ul, p, dl, dt, dd {
+	margin: 0;
+	padding: 0;
+}
+
+ul {
+	list-style: none;
+}
+
+body, html {
+	background: @baseWhite;
+}
