@@ -3,7 +3,8 @@ all:
 	@echo "------------------------------------------"
 	@echo "rainbow build manager"
 	@echo "------------------------------------------"
-	@echo "make build: create dist folder -----git push -----cp -f -a dist ../blog "
+	@echo "make build: create dist folder "
+	@echo "make push: git push "
 	@echo "------------------------------------------"
 
 master-check:
@@ -12,7 +13,7 @@ master-check:
 push: master-check
 	git add .
 	git commit -m 'fixed'
-	git push 
+	git push
 
 build: master-check
 	git add .
