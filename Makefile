@@ -19,4 +19,5 @@ build: master-check
 	git add .
 	git commit -m 'build'
 	git push
+	yarn build
 	cp -f -a dist ../blog
