@@ -17,4 +17,4 @@ push: master-check
 
 build: master-check
 	yarn build
-	cp -f -a dist ../blog
+	cp -f -a dist/ ../blog
