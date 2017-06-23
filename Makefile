@@ -16,5 +16,8 @@ push: master-check
 	git push
 
 build: master-check
+	git add .
+	git commit -m 'fixed'
+	git push
 	yarn build
 	cp -f -a dist/ ../blog

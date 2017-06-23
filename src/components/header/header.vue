@@ -1,6 +1,6 @@
 <template>
-  <div id="header">
-		头部文件
+  <div id="header" :class="['header', { 'header--full': full }]">
+		头部
   </div>
 </template>
 
@@ -8,9 +8,17 @@
 export default {
   data () {
 		return {
-
+			full: false,
 		}
-	}
+	},
+	created () {
+		window.addEventListener('scroll', this.listenScroll)
+	},
+	methods: {
+		listenScroll () {
+			this.full = window.scrollY >= 20 ? true : false
+		}
+	},
 }
 </script>
 
