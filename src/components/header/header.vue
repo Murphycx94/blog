@@ -6,18 +6,20 @@
 				</path>
 			</svg>
 		</a>
-		<div class="nav-ctrl">
+		<div class="nav-ctrl" @click="showMenu = !showMenu">
 			<span class="nav-ctrl__line"></span>
 			<span class="nav-ctrl__line"></span>
 			<span class="nav-ctrl__line"></span>
 		</div>
-		<ul class="nav-menu">
-			<li class="nav-menu-item"><p>按钮1asdfasd</p></li>
-			<li class="nav-menu-item"><p>按钮2</p></li>
-			<li class="nav-menu-item"><p>按钮3</p></li>
-			<li class="nav-menu-item"><p>按钮4</p></li>
-			<li class="nav-menu-item"><p>按钮5</p></li>
-		</ul>
+		<el-collapse-transition>
+			<ul  v-show="showMenu" class="nav-menu">
+				<li class="nav-menu-item"><a>按钮1asdfasd</a></li>
+				<li class="nav-menu-item"><a>按钮2</a></li>
+				<li class="nav-menu-item"><a>按钮3</a></li>
+				<li class="nav-menu-item"><a>按钮4</a></li>
+				<li class="nav-menu-item"><a>按钮5</a></li>
+			</ul>
+		</el-collapse-transition>
   </header>
 </template>
 
@@ -26,6 +28,7 @@ export default {
   data () {
 		return {
 			full: false,
+			showMenu: true,
 		}
 	},
 	created () {

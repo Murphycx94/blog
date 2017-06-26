@@ -26,7 +26,7 @@
 					&::after {
 						display: none;
 					}
-					p {
+					a {
 						margin: 0;
 						width: 100%;
 						max-width: 150px;
@@ -55,7 +55,7 @@
 			align-items: center;
 		}
 		.nav-menu {
-			display: flex;
+			display: flex!important;
 			justify-content: flex-end;
 			flex: 1 1 auto;
 			line-height: 60px;
@@ -86,10 +86,11 @@
 						opacity: 1;
 					}
 				}
-				p {
+				a {
 					position: relative;
 					padding: 0 5px;
 					max-width: 60px;
+					color: #495060;
 					white-space: nowrap;
 					text-overflow: ellipsis;
 					overflow: hidden;
@@ -124,6 +125,22 @@
 			top: 60px;
 			width: 100%;
 			background-color: @headerDefalut;
+			&-item {
+				height: 40px;
+				line-height: 40px;
+				cursor: pointer;
+				transition: all .4s ease;
+				&:hover {
+					background-color: @headerDefalut;
+					a {
+						color: @linkHoverDark;
+					}
+				}
+				a {
+					color: @linkDark;
+					transition: all .4s ease;
+				}
+			}
 		}
 		.nav-ctrl {
 			display: flex;
