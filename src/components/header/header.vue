@@ -11,8 +11,15 @@
 			<span class="nav-ctrl__line"></span>
 			<span class="nav-ctrl__line"></span>
 		</div>
+		<ul class="nav-menu">
+			<li class="nav-menu-item"><a>按钮1asdfasd</a></li>
+			<li class="nav-menu-item"><a>按钮2</a></li>
+			<li class="nav-menu-item"><a>按钮3</a></li>
+			<li class="nav-menu-item"><a>按钮4</a></li>
+			<li class="nav-menu-item"><a>按钮5</a></li>
+		</ul>
 		<el-collapse-transition>
-			<ul  v-show="showMenu" class="nav-menu">
+			<ul v-if="showMenu" class="nav-menu--xs">
 				<li class="nav-menu-item"><a>按钮1asdfasd</a></li>
 				<li class="nav-menu-item"><a>按钮2</a></li>
 				<li class="nav-menu-item"><a>按钮3</a></li>
@@ -28,17 +35,25 @@ export default {
   data () {
 		return {
 			full: false,
-			showMenu: true,
+			showMenu: false,
 		}
 	},
-	created () {
+	computed: {
+
+	},
+	mounted () {
 		window.addEventListener('scroll', this.listenScroll)
+		window.addEventListener('resize', this.listenResize)
 	},
 	methods: {
 		listenScroll () {
 			this.full = window.scrollY >= 80 ? true : false
+		},
+		listenResize () {
+			this.showMenu = document.documentElement.clientWidt > 768 ? true : false
 		}
 	},
+
 }
 </script>
 

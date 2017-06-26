@@ -55,7 +55,7 @@
 			align-items: center;
 		}
 		.nav-menu {
-			display: flex!important;
+			display: flex;
 			justify-content: flex-end;
 			flex: 1 1 auto;
 			line-height: 60px;
@@ -97,11 +97,16 @@
 				}
 			}
 		}
+		.nav-menu--xs {
+			display: none;
+		}
 		.nav-ctrl {
 			display: none;
 		}
 	}
 }
+
+
 @media screen and (max-width:768px) {
 	.header {
 		position: relative;
@@ -120,6 +125,9 @@
 			align-items: center;
 		}
 		.nav-menu {
+			display: none;
+		}
+		.nav-menu--xs {
 			position: absolute;
 			left: 0;
 			top: 60px;
