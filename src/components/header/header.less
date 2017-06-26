@@ -1,6 +1,6 @@
 @import url(../../assets/styles/data.less);
 
-@media screen and (min-width:768px) {
+@media screen and (min-width:769px) {
 	.header {
 		display: flex;
 		position: fixed;
@@ -101,8 +101,9 @@
 		}
 	}
 }
-@media screen and (max-width:767px) {
+@media screen and (max-width:768px) {
 	.header {
+		position: relative;
 		display: flex;
 		justify-content: space-between;
 		position: fixed;
@@ -113,13 +114,32 @@
 		height: 60px;
 		background-color: @headerDefalut;
 		transition: all .4s ease;
-		overflow: hidden;
 		.nav-link {
 			display: flex;
 			align-items: center;
 		}
 		.nav-menu {
-			display: none;
+			position: absolute;
+			left: 0;
+			top: 60px;
+			width: 100%;
+			background-color: @headerDefalut;
+		}
+		.nav-ctrl {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			padding: 15px 10px;
+			overflow: hidden;
+			cursor: pointer;
+			&__line {
+				display: block;
+				margin: 2px 0;
+				width: 20px;
+				height: 2px;
+				background-color: #495060;
+			}
 		}
 	}
 }
