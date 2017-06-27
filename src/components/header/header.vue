@@ -6,27 +6,18 @@
 				</path>
 			</svg>
 		</a>
-		<div class="nav-ctrl" @click="showMenu = !showMenu">
+		<div :class="['nav-ctrl', { active: showMenu }]" @click="showMenu = !showMenu">
 			<span class="nav-ctrl__line"></span>
 			<span class="nav-ctrl__line"></span>
 			<span class="nav-ctrl__line"></span>
 		</div>
-		<ul class="nav-menu">
+		<ul :class="['nav-menu', { active: showMenu }]">
 			<li class="nav-menu-item"><a>按钮1asdfasd</a></li>
 			<li class="nav-menu-item"><a>按钮2</a></li>
 			<li class="nav-menu-item"><a>按钮3</a></li>
 			<li class="nav-menu-item"><a>按钮4</a></li>
 			<li class="nav-menu-item"><a>按钮5</a></li>
 		</ul>
-		<el-collapse-transition>
-			<ul v-if="showMenu" class="nav-menu--xs">
-				<li class="nav-menu-item"><a>按钮1asdfasd</a></li>
-				<li class="nav-menu-item"><a>按钮2</a></li>
-				<li class="nav-menu-item"><a>按钮3</a></li>
-				<li class="nav-menu-item"><a>按钮4</a></li>
-				<li class="nav-menu-item"><a>按钮5</a></li>
-			</ul>
-		</el-collapse-transition>
   </header>
 </template>
 
