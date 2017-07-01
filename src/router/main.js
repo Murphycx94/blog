@@ -5,6 +5,6 @@ export default [
 		path: '/',
 		name: 'index',
 		meta: { requiresAuth: true },
-		component: resolve => import('@/views/index.vue'),
+		component: resolve => import('@/views/main/index.vue'),
 	}
 ]

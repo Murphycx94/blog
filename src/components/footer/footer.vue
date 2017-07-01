@@ -1,12 +1,12 @@
 <template>
-  <div class="footer">
+  <footer class="footer">
 		<p>使用Vue.js 基于GitHub构建</p>
 		<p>Copyright © 2017 MurphyC. All Rights Reserved</p>
-		<p><a href="mailto:shmilyclxy@163.com" title="shmilyclxy@163.com">shmilyclxy@163.com</a></p>
+		<p>tel：<a href="tel:17764526709" title="17764526709">17764526709</a></p>
 		<p>
 			<a href="#">source</a> | <a href="#">GitHub</a>
 		</p>
-  </div>
+  </footer>
 </template>
 
 <script>
