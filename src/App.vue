@@ -1,7 +1,7 @@
 <template>
   <div id="app">
 		<blog-header></blog-header>
-    <router-view></router-view>
+    <router-view class="router-view"></router-view>
 		<blog-footer></blog-footer>
   </div>
 </template>
@@ -19,5 +19,13 @@ export default {
 }
 </script>
 
-<style>
+<style lang="less">
+  #app {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    .router-view {
+      flex: 1;
+    }
+  }
 </style>

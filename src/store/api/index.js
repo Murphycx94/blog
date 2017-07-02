@@ -9,7 +9,7 @@
 
 import axios from 'axios'
 
-const Authorization = new Buffer(':token').toString('base64')
+const Authorization = new Buffer(':a2cac38b23a257387e3620c12c73f6aaaa74541a').toString('base64')
 
 const onRequest = req => {
 	return req
@@ -36,6 +36,10 @@ export const onResponseError = error => {
 export const http = axios.create({
 	baseURL: 'https://api.github.com',
 	timeout: 10000,
+	headers: {
+		Authorization: `Basic ${Authorization}`,
+		'Content-Type': 'application/json',
+	}
 })
 
 http.interceptors.request.use(onRequest, onRequestError);

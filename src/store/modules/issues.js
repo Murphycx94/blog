@@ -17,7 +17,7 @@ export default {
 			return api.getIssues().then(res => {
 				commit('GET_ISSUES', res.data)
 			}).catch(err => {
-				reject(err)
+				
 			})
 		},
 	},

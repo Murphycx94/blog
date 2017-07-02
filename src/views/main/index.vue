@@ -11,10 +11,13 @@
 		</div>
 		<div class="main">
 			<ul class="main__issues">
-				<li class="issues-item">
-					<h2 class="issues-item__head">这个是文章标题</h2>
-					<p class="issues-item__info"><span> Created by cx on </span> 2017年3月16日 </p>
-					<p class="issues-item__description">杀戮空间啊；了速度快解放；啥大嫁风尚；</p>
+        <li class="issues-item" v-for="item in data">
+					<h2 class="issues-item__title">{{ item.title }}</h2>
+					<p class="issues-item__info">
+					  <span> Created by {{ item.user.login }} on </span>
+            {{ item.created_at }}
+					</p>
+					<p class="issues-item__description">{{ item.body | txtFilter }}</p>
 				</li>
 			</ul>
 		</div>
@@ -23,8 +26,12 @@
 
 <script>
 import { mapActions, mapState } from 'vuex'
+import { txtFilter } from '@/filters'
 
 export default {
+  filters: {
+    txtFilter
+  },
   data () {
 		return {
 
@@ -39,9 +46,7 @@ export default {
 		})
 	},
 	created () {
-		this.getIssues().then(() => {
-			console.log(this.data)
-		})
+		this.getIssues()
 	},
 }
 </script>
