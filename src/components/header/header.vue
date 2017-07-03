@@ -12,11 +12,11 @@
 			<span class="nav-ctrl__line"></span>
 		</div>
 		<ul :class="['nav-menu', { active: showMenu }]">
-			<li class="nav-menu-item"><a>按钮1asdfasd</a></li>
-			<li class="nav-menu-item"><a>按钮2</a></li>
-			<li class="nav-menu-item"><a>按钮3</a></li>
-			<li class="nav-menu-item"><a>按钮4</a></li>
-			<li class="nav-menu-item"><a>按钮5</a></li>
+			<li class="nav-menu-item"><a href="javascript:;" @click="jumpRouter('index')">按钮1asdfasd</a></li>
+			<li class="nav-menu-item"><a href="javascript:;" @click="jumpRouter('article')">按钮2</a></li>
+			<li class="nav-menu-item"><a href="javascript:;" @click="jumpRouter('404')">按钮3</a></li>
+			<li class="nav-menu-item"><a href="javascript:;" @click="jumpRouter('404')">按钮4</a></li>
+			<li class="nav-menu-item"><a href="javascript:;" @click="jumpRouter('404')">按钮5</a></li>
 		</ul>
   </header>
 </template>
@@ -42,6 +42,9 @@ export default {
 		},
 		listenResize () {
 			this.showMenu = document.documentElement.clientWidt > 768 ? true : false
+		},
+		jumpRouter (name) {
+			this.$router.push({ name })
 		}
 	},
 

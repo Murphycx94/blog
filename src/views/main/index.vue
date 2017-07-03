@@ -15,7 +15,7 @@
 					<h2 class="issues-item__title">{{ item.title }}</h2>
 					<p class="issues-item__info">
 					  <span> Created by {{ item.user.login }} on </span>
-            {{ item.created_at }}
+            {{ item.created_at | timeFilter }}
 					</p>
 					<p class="issues-item__description">{{ item.body | txtFilter }}</p>
 				</li>
@@ -26,11 +26,12 @@
 
 <script>
 import { mapActions, mapState } from 'vuex'
-import { txtFilter } from '@/filters'
+import { txtFilter, timeFilter } from '@/filters'
 
 export default {
   filters: {
-    txtFilter
+    txtFilter,
+		timeFilter
   },
   data () {
 		return {
