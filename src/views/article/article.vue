@@ -1,10 +1,13 @@
 <template>
   <section class="article">
-  	<h1>文章  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h1>
+  	<article class="markdown-body">
+  				{{ markedString }}
+  	</article>
   </section>
 </template>
 
 <script>
+import { mapActions, mapState, mapGetters } from 'vuex'
 export default {
   data () {
 		return {
@@ -12,20 +15,21 @@ export default {
 		}
 	},
 	computed: {
-
+		...mapGetters('issues', ['markedStr']),
+		...mapState('issues', ['data', 'markedString']),
 	},
-	mounted () {
-
+	created () {
+		this.getIssue(4)
 	},
 	methods: {
-
+		...mapActions('issues', {
+			getIssue: 'GET_ISSUE'
+		})
 	},
 
 }
 </script>
 
 <style lang="less" scoped>
-	h1{
-		min-height: 1000px;
-	}
+	@import "./article.less";
 </style>

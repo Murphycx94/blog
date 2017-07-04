@@ -11,7 +11,7 @@
 		</div>
 		<div class="main">
 			<ul class="main__issues">
-        <li class="issues-item" v-for="item in data">
+        <li class="issues-item" v-for="item in list">
 					<h2 class="issues-item__title">{{ item.title }}</h2>
 					<p class="issues-item__info">
 					  <span> Created by {{ item.user.login }} on </span>
@@ -39,7 +39,7 @@ export default {
 		}
 	},
 	computed: {
-		...mapState('issues', ['data']),
+		...mapState('issues', ['list']),
 	},
 	methods: {
 		...mapActions('issues', {
