@@ -9,8 +9,8 @@
 				<a href="mailto:shmilyclxy@163.com" title="shmilyclxy@163.com">shmilyclxy@163.com</a>
 			</div>
 		</div>
-		<div class="main">
-			<ul class="main__issues">
+		<div class="main" v-loading="list.length === 0">
+			<ul class="main__issues" v-if="list.length !== 0">
         <li class="issues-item" v-for="item in list">
 					<h2 class="issues-item__title">{{ item.title }}</h2>
 					<p class="issues-item__info">
@@ -20,6 +20,9 @@
 					<p class="issues-item__description">{{ item.body | txtFilter }}</p>
 				</li>
 			</ul>
+			<h1 v-else>
+				加载中...
+			</h1>
 		</div>
   </section>
 </template>

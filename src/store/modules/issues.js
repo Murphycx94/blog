@@ -11,14 +11,8 @@ export default {
 	namespaced: true,
 	state: {
 		list: [],
-		data: {},
+		data: null,
 		markedString: '',
-	},
-	getters: {
-		markedStr: (state, getters) => {
-			const str = marked(state.data.body)
-    	return str
-  	}
 	},
 	actions: {
 		GET_ISSUES ({ commit }, params) {

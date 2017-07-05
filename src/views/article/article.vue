@@ -1,8 +1,6 @@
 <template>
   <section class="article">
-  	<article class="markdown-body">
-  				{{ markedString }}
-  	</article>
+  	<article v-loading="data === null" v-html="markedString" class="markdown-body"></article>
   </section>
 </template>
 
@@ -15,7 +13,6 @@ export default {
 		}
 	},
 	computed: {
-		...mapGetters('issues', ['markedStr']),
 		...mapState('issues', ['data', 'markedString']),
 	},
 	created () {
