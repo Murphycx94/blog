@@ -42,15 +42,19 @@ export default {
 		}
 	},
 	computed: {
-		...mapState('issues', ['list']),
+		...mapState('issues', ['list', 'labels']),
 	},
 	methods: {
 		...mapActions('issues', {
-			getIssues: 'GET_ISSUES'
-		})
+			getIssues: 'GET_ISSUES',
+			getLabels: 'GET_LABELS',
+		}),
 	},
 	created () {
 		this.getIssues()
+		this.getLabels().then((value) => {
+			console.log(this.labels)
+		})
 	},
 }
 </script>

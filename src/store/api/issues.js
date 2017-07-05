@@ -16,3 +16,7 @@ export const getIssues = () => {
 export const getIssue = (number) => {
 	return http.get(`repos/${owner}/${repo}/issues/${number}`)
 }
+
+export const getLabels = () => {
+	return http.get(`repos/${owner}/${repo}/labels`)
+}

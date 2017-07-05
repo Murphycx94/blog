@@ -13,6 +13,7 @@ export default {
 		list: [],
 		data: null,
 		markedString: '',
+		labels: [],
 	},
 	actions: {
 		GET_ISSUES ({ commit }, params) {
@@ -29,6 +30,11 @@ export default {
 
 			})
 		},
+		GET_LABELS ({ commit }, params) {
+			return api.getLabels(params).then(res => {
+				commit('GET_LABELS', res.data)
+			})
+		}
 	},
 	mutations: {
 		GET_ISSUES (state, list) {
@@ -37,6 +43,9 @@ export default {
 		GET_ISSUE (state, data) {
 			state.data = data
 			state.markedString = marked(data.body)
+		},
+		GET_LABELS (state, data) {
+			state.labels = data
 		}
 	}
 }
