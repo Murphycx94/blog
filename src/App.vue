@@ -12,10 +12,13 @@ import blogFooter from '@/components/footer/footer.vue'
 
 export default {
   name: 'app',
-	components : {
+	components: {
 		blogHeader,
 		blogFooter,
-	}
+	},
+  methods: {
+
+  }
 }
 </script>
 

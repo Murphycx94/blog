@@ -7,10 +7,28 @@
 	width: 100%;
 	margin: 100px auto 0;
 	padding: 0 45px;
+	.markdown__title {
+		padding-bottom: 20px;
+		text-align: center;
+		transition: all .4s ease-in;
+		.title {
+			font-size: 24px;
+			font-weight: 500;
+			color: #333;
+		}
+		.tips {
+			font-size: 14px;
+			font-weight: 300;
+			color: #999;
+		}
+	}
 }
 
 @media (max-width: 767px) {
 	.markdown-body {
 		padding: 0 15px 50px;
+		.markdown__title {
+			padding-bottom: 10px;
+		}
 	}
 }

@@ -11,6 +11,7 @@ export const txtFilter = (str) => {
 }
 
 export const timeFilter = (str) => {
+	if (str === undefined) return false
 	const regx = /[a-zA-Z]/gi
 	return str.replace(regx, ' ')
 }

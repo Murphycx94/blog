@@ -9,6 +9,7 @@ import { store } from '@/store'
 import 'element-ui/lib/theme-default/index.css'
 import '@/assets/styles/common.less'
 import 'github-markdown-css'
+import Loading from '@/components/loading/loading'
 
 Vue.config.productionTip = false
 
@@ -21,5 +22,5 @@ new Vue({
   router,
 	store,
   template: '<App/>',
-  components: { App }
+  components: { App, Loading }
 })

@@ -1,5 +1,5 @@
 <template>
-  <section id="index">
+	<section id="index">
 		<div class="banner">
 			<div class="banner__avatar"><img src="./avatar.png" alt="avatar"></div>
 			<div class="banner__description">
@@ -11,11 +11,11 @@
 		</div>
 		<div class="main" v-loading="list.length === 0">
 			<ul class="main__issues" v-if="list.length !== 0">
-        <li class="issues-item" v-for="item in list">
-					<h2 class="issues-item__title">{{ item.title }}</h2>
+				<li class="issues-item" v-for="item in list">
+					<h2 class="issues-item__title" @click="jumpRouter(item.number)">{{ item.title }}</h2>
 					<p class="issues-item__info">
-					  <span> Created by {{ item.user.login }} on </span>
-            {{ item.created_at | timeFilter }}
+						<span> Created by {{ item.user.login }} on </span>
+						{{ item.created_at | timeFilter }}
 					</p>
 					<p class="issues-item__description">{{ item.body | txtFilter }}</p>
 				</li>
@@ -24,7 +24,7 @@
 				加载中...
 			</h1>
 		</div>
-  </section>
+	</section>
 </template>
 
 <script>
@@ -32,11 +32,11 @@ import { mapActions, mapState } from 'vuex'
 import { txtFilter, timeFilter } from '@/filters'
 
 export default {
-  filters: {
-    txtFilter,
+	filters: {
+		txtFilter,
 		timeFilter
-  },
-  data () {
+	},
+	data () {
 		return {
 
 		}
@@ -49,12 +49,14 @@ export default {
 			getIssues: 'GET_ISSUES',
 			getLabels: 'GET_LABELS',
 		}),
+		jumpRouter (number) {
+			console.log('n',number)
+			this.$router.push({ name: 'article', params: { number } })
+		},
 	},
-	created () {
-		this.getIssues()
-		this.getLabels().then((value) => {
-			console.log(this.labels)
-		})
+	async created () {
+		await this.getIssues()
+		console.log('2')
 	},
 }
 </script>

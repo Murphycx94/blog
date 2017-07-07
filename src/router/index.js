@@ -22,14 +22,10 @@ const router = new Router({
 	routes,
 })
 
-router.beforeEach(async (to, from, next) => {
+router.beforeEach((to, from, next) => {
 	bar.start()
-	await next()
+	next()
 	bar.finish()
 })
-
-
-
-
 
 export default router

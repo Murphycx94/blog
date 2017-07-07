@@ -11,7 +11,11 @@ export default {
 	namespaced: true,
 	state: {
 		list: [],
-		data: null,
+		data: {
+			user: {
+				login: '',
+			},
+		},
 		markedString: '',
 		labels: [],
 	},
@@ -19,6 +23,7 @@ export default {
 		GET_ISSUES ({ commit }, params) {
 			return api.getIssues().then(res => {
 				commit('GET_ISSUES', res.data)
+				console.log(1)
 			}).catch(err => {
 
 			})
