@@ -1,5 +1,6 @@
 <template>
 	<section class="article">
+		<loading></loading>
 		<article v-loading="data.title === undefined" class="markdown-body">
 			<div class="markdown__title">
 				<div class="title">{{ data.title }}</div>
@@ -38,7 +39,6 @@ export default {
 			getIssue: 'GET_ISSUE'
 		})
 	},
-
 }
 </script>
 

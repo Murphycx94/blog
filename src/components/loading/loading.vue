@@ -27,16 +27,14 @@ export default {
 
 <style lang="css">
 .loader {
-		background: #000;
-		background: -webkit-radial-gradient(#222, #000);
-		background: radial-gradient(#222, #000);
+		background: rgba(255, 255, 255, 0.5);
 		bottom: 0;
 		left: 0;
 		overflow: hidden;
 		position: fixed;
 		right: 0;
 		top: 0;
-		z-index: 99999;
+		z-index: 50;
 }
 
 .loader-inner {
