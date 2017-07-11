@@ -9,8 +9,9 @@
 				<a href="mailto:shmilyclxy@163.com" title="shmilyclxy@163.com">shmilyclxy@163.com</a>
 			</div>
 		</div>
-		<div class="main" v-loading="list.length === 0">
-			<ul class="main__issues" v-if="list.length !== 0">
+		<div class="main">
+			<loading v-if="loading"></loading>
+			<ul class="main__issues" v-else>
 				<li class="issues-item" v-for="item in list">
 					<h2 class="issues-item__title" @click="jumpRouter(item.number)">{{ item.title }}</h2>
 					<p class="issues-item__info">
@@ -20,9 +21,6 @@
 					<p class="issues-item__description">{{ item.body | txtFilter }}</p>
 				</li>
 			</ul>
-			<h1 v-else>
-				加载中...
-			</h1>
 		</div>
 	</section>
 </template>
@@ -38,7 +36,7 @@ export default {
 	},
 	data () {
 		return {
-
+			loading: true,
 		}
 	},
 	computed: {
@@ -56,11 +54,11 @@ export default {
 	},
 	async created () {
 		await this.getIssues()
-		console.log('2')
+		this.loading = false
 	},
 }
 </script>
 
 <style lang="less" scoped>
- @import url(./index.less);
+	@import url(./index.less);
 </style>

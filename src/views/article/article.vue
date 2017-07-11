@@ -1,7 +1,7 @@
 <template>
 	<section class="article">
-		<loading></loading>
-		<article v-loading="data.title === undefined" class="markdown-body">
+		<loading v-if="loading"></loading>
+		<article v-else class="markdown-body">
 			<div class="markdown__title">
 				<div class="title">{{ data.title }}</div>
 				<div class="tips">
@@ -25,14 +25,15 @@ export default {
 	},
 	data () {
 		return {
-
+			loading: true,
 		}
 	},
 	computed: {
 		...mapState('issues', ['data', 'markedString']),
 	},
-	mounted () {
-		this.getIssue(this.$route.params.number)
+	async created () {
+		await this.getIssue(this.$route.params.number)
+		this.loading = false
 	},
 	methods: {
 		...mapActions('issues', {
