@@ -17,18 +17,17 @@ export default {
 		blogFooter,
 	},
   methods: {
-
   }
 }
 </script>
 
 <style lang="less">
-  #app {
-    display: flex;
-    flex-direction: column;
-    min-height: 100%;
-    .router-view {
-      flex: 1;
-    }
-  }
+	#app {
+		display: flex;
+		flex-direction: column;
+		min-height: 100%;
+		.router-view {
+			flex: 1;
+		}
+	}
 </style>
