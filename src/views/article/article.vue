@@ -37,7 +37,7 @@ export default {
 	},
 	methods: {
 		...mapActions('issues', {
-			getIssue: 'GET_ISSUE'
+			getIssue: 'GET_ISSUE',
 		})
 	},
 }
