@@ -5,7 +5,7 @@
 			<div class="banner__description">
 				<p title="web前端攻城狮">web前端攻城狮</p>
 				<p title="思绪很凌乱，偶尔也写一点东西">思绪很凌乱，偶尔也写一点东西</p>
-				<p>坐标 杭州</p>
+				<p>坐标-杭州</p>
 				<a href="mailto:shmilyclxy@163.com" title="shmilyclxy@163.com">shmilyclxy@163.com</a>
 			</div>
 		</div>

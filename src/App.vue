@@ -17,6 +17,7 @@ export default {
 		blogFooter,
 	},
 	methods: {
+		
 	}
 }
 </script>
