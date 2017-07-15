@@ -21,7 +21,7 @@ import { txtFilter, timeFilter } from '@/filters'
 export default {
 	filters: {
 		txtFilter,
-		timeFilter
+		timeFilter,
 	},
 	data () {
 		return {
