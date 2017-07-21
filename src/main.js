@@ -20,9 +20,9 @@ sync(store, router)
 Vue.component('loading', loading);
 
 new Vue({
-  el: '#app',
-  router,
+	el: '#app',
+	router,
 	store,
-  template: '<App/>',
-  components: { App }
+	template: '<App/>',
+	components: { App }
 })
