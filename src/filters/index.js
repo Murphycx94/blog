@@ -6,8 +6,9 @@
 */
 
 export const txtFilter = (str) => {
+	if (str.length === 0) return ''
 	const regex = /[\u4e00-\u9fa5{}=>\sa-zA-Z0-9]+/gi
-	return str.match(regex).join('').slice(0,55) + '...'
+	return str.match(regex).join(' ').slice(0,55) + '...'
 }
 
 export const timeFilter = (str) => {

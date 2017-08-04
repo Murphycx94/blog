@@ -10,6 +10,7 @@
 				</div>
 			</div>
 			<div v-html="markedString"></div>
+			<player :src="'http://vjs.zencdn.net/v/oceans.mp4'"></player>
 		</article>
 	</section>
 </template>
@@ -17,8 +18,12 @@
 <script>
 import { mapActions, mapState, mapGetters } from 'vuex'
 import { txtFilter, timeFilter } from '@/filters'
+import player from '@/components/player/player'
 
 export default {
+	components: {
+		player,
+	},
 	filters: {
 		txtFilter,
 		timeFilter,

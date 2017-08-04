@@ -1,9 +1,3 @@
-/*
-* @Author: chuxiao
-* @Date:   2017-07-01 15:35:57
-* @Last Modified by:   WilliamChan
-* @Last Modified time: 2017-07-01 15:47:57
-*/
 import * as api from '@/store/api/issues'
 import marked from 'marked'
 
@@ -23,7 +17,6 @@ export default {
 		GET_ISSUES ({ commit }, params) {
 			return api.getIssues().then(res => {
 				commit('GET_ISSUES', res.data)
-				console.log(1)
 			}).catch(err => {
 
 			})
@@ -42,8 +35,10 @@ export default {
 		}
 	},
 	mutations: {
-		GET_ISSUES (state, list) {
-			state.list = list
+		GET_ISSUES (state, data) {
+			// console.dir(data)
+			// console.dir(state.list)
+			state.list = data
 		},
 		GET_ISSUE (state, data) {
 			state.data = data

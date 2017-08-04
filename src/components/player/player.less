@@ -1,0 +1,231 @@
+.player {
+	position: relative;
+	background-color: #000;
+	overflow: hidden;
+	width: 720px;
+	height: 480px;
+	color: #aaa;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+	-khtml-user-select: none;
+	user-select: none;
+	&:-webkit-full-screen {
+		position: fixed!important;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		margin: 0;
+		width: 100%!important;
+		height: 100%!important;
+		box-sizing: border-box;
+		object-fit: contain;
+		background-color: #000;
+	}
+	.player__mask {
+		position: absolute;
+		left: 0;
+		right: 0;
+		top: 0;
+		bottom: 0;
+		background: transparent;
+		z-index: 1;
+		.controls {
+			display: flex;
+			position: absolute;
+			justify-content: space-between;
+			left: 0;
+			bottom: -40px;
+			padding: 0 15px;
+			width: 100%;
+			height: 40px;
+			line-height: 40px;
+			z-index: 5;
+			background: rgba(26,26,26,.8);
+			transition: all .2s ease-in-out;
+			&.controls--show {
+				bottom: 0;
+			}
+			&:hover {
+				bottom: 0;
+			}
+			.controls-box {
+				display: flex;
+				.controls-item {
+					display: flex;
+					margin: 0 10px;
+					font-weight: 300;
+					.controls-item__button {
+						cursor: pointer;
+						transition: all .2s ease-in;
+						&:hover {
+							color: #31bedb;
+						}
+						i {
+							font-size: 18px;
+						}
+					}
+					.controls-item__progress {
+						position: relative;
+						width: 100px;
+						height: 20px;
+						margin: 10px 15px;
+						cursor: pointer;
+						.progress__bar {
+							position: absolute;
+							left: 0;
+							top: 50%;
+							margin-top: -1px;
+							width: 100px;
+							height: 2px;
+							background: #666;
+						}
+						.progress__play {
+							position: absolute;
+							left: 0;
+							top: 50%;
+							margin-top: -1px;
+							height: 2px;
+							background: #31bedb;
+							.progress__circle {
+								background-color: #31bedb;
+								height: 10px;
+								width: 10px;
+								border-radius: 50%;
+								position: absolute;
+								right: -5px;
+								top: -4px;
+								z-index: 5;
+							}
+						}
+					}
+				}
+			}
+			.player__progress {
+				position: absolute;
+				cursor: pointer;
+				top: -15px;
+				left: 0;
+				height: 15px;
+				width: 100%;
+				background-color: transparent;
+				.progress__bar,
+				.progress__load,
+				.progress__play {
+					position: absolute;
+					bottom: 0;
+					left: 0;
+					height: 2px;
+					transition: height .2s linear;
+				}
+				.progress__bar {
+					width: 100%;
+					background-color: rgba(0,0,0,.5);
+					z-index: 10;
+				}
+				.progress__load {
+					z-index: 20;
+					background: #828282;
+					opacity: 0.6;
+				}
+				.progress__play {
+					background: #31bedb;
+					z-index: 30;
+					.progress__circle {
+						position: absolute;
+						background-color: #fff;
+						border-radius: 50%;
+						cursor: pointer;
+						height: 0;
+						width: 0;
+						opacity: 0;
+						top: 0;
+						right: 0;
+						box-shadow: -1px 0 5px #626262;
+						transition: all .2s linear;
+						z-index: 40;
+					}
+				}
+				&:hover {
+					.progress__bar,
+					.progress__load,
+					.progress__play {
+						height: 15px;
+					}
+					.progress__circle {
+						margin-right: -8px;
+						height: 16px;
+						width: 16px;
+						opacity: 1;
+					}
+				}
+			}
+		}
+	}
+	.player__logo {
+		position: absolute;
+		left: 0;
+		right: 0;
+		top: 0;
+		bottom: 0;
+		margin: auto;
+		height: 96px;
+		width: 96px;
+		cursor: pointer;
+		background-color: transparent;
+		z-index: 2;
+	}
+	.player__err {
+		position: absolute;
+		left: 0;
+		right: 0;
+		top: 0;
+		bottom: 0;
+		z-index: 3;
+		cursor: default;
+		.err {
+			position: absolute;
+			left: 0;
+			right: 0;
+			top: 0;
+			bottom: 0;
+			margin: auto;
+			width: 100%;
+			height: 20px;
+			line-height: 20px;
+			text-align: center;
+		}
+	}
+}
+#video::-webkit-media-controls-enclosure {
+	/*禁用播放器控制栏的样式*/
+	display: none !important;
+}
+
+
+@font-face {
+	font-family: "iconfont";
+	src: url('./font_ckl7nljllpst6gvi.eot?t=1501837971807'), /* IE9*/
+	url('./font_ckl7nljllpst6gvi.woff?t=1501837971807') format('woff'), /* chrome, firefox */
+	url('./font_ckl7nljllpst6gvi.ttf?t=1501837971807') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+	url('./font_ckl7nljllpst6gvi.svg?t=1501837971807#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+.iconfont {
+	font-family:"iconfont" !important;
+	font-size:16px;
+	font-style:normal;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.icon-video-play:before { content: "\e62f"; }
+
+.icon-video-next:before { content: "\e630"; }
+
+.icon-video-mute:before { content: "\e631"; }
+
+.icon-video-pause:before { content: "\e632"; }
+
+.icon-video-volume:before { content: "\e634"; }
