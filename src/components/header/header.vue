@@ -50,6 +50,7 @@ export default {
 		},
 		jumpRouter (name, label) {
 			this.$router.push({ name, params:{ label } })
+			this.showMenu = false
 		}
 	},
 
