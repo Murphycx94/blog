@@ -9,7 +9,7 @@
 
 import axios from 'axios'
 
-const Authorization = new Buffer(':cf75423f89ff7d94b6edbbfdf0fcd9d8002227a0').toString('base64')
+const Authorization = new Buffer(':fac9da7ae63bfc702835143021529b9e8abbebb5').toString('base64')
 
 const onRequest = req => {
 	return req
