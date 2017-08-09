@@ -9,8 +9,9 @@
 
 import { http, repo, owner } from '@/store/api'
 
-export const getIssues = () => {
-	return http.get(`repos/${owner}/${repo}/issues`)
+export const getIssues = (labels) => {
+	labels = labels ?  labels : ''
+	return http.get(`repos/${owner}/${repo}/issues?labels=${labels}`)
 }
 
 export const getIssue = (number) => {

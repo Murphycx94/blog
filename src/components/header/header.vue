@@ -12,8 +12,8 @@
 			<span class="nav-ctrl__line"></span>
 		</div>
 		<ul :class="['nav-menu', { active: showMenu }]">
-			<li class="nav-menu-item" @click="jumpRouter('index')"><a href="javascript:;">首页</a></li>
-			<li v-for="label in labels" :title="label.name" class="nav-menu-item" @click="jumpRouter('article')"><a href="javascript:;">{{ label.name }}</a></li>
+			<li class="nav-menu-item" @click="jumpRouter('index', '')"><a href="javascript:;">首页</a></li>
+			<li v-for="label in labels" :title="label.name" class="nav-menu-item" @click="jumpRouter('index', label.name)"><a href="javascript:;">{{ label.name }}</a></li>
 		</ul>
 	</header>
 </template>
@@ -48,8 +48,8 @@ export default {
 		listenResize () {
 			this.showMenu = document.documentElement.clientWidt > 768 ? true : false
 		},
-		jumpRouter (name) {
-			this.$router.push({ name })
+		jumpRouter (name, label) {
+			this.$router.push({ name, params:{ label } })
 		}
 	},
 

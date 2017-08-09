@@ -2,7 +2,7 @@
 
 export default [
 	{
-		path: '/',
+		path: '/home/:label',
 		name: 'index',
 		meta: { requiresAuth: true },
 		component: resolve => import('@/views/main/index.vue'),

@@ -15,7 +15,7 @@ export default {
 	},
 	actions: {
 		GET_ISSUES ({ commit }, params) {
-			return api.getIssues().then(res => {
+			return api.getIssues(params).then(res => {
 				commit('GET_ISSUES', res.data)
 			}).catch(err => {
 

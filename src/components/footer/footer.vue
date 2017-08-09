@@ -4,7 +4,7 @@
 		<p>Copyright © 2017 MurphyC. All Rights Reserved</p>
 		<p>tel：<a href="tel:17764526709" title="17764526709">17764526709</a></p>
 		<p>
-			<a href="#">source</a> | <a href="#">GitHub</a>
+			<a href="https://github.com/Murphycx94/blog">Source</a> | <a href="https://github.com/Murphycx94">GitHub</a>
 		</p>
 	</footer>
 </template>
