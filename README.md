@@ -1,7 +1,8 @@
 # blog
 
-> 个人博客源码
-https://murphycx94.github.io/
+> 个人博客源码  
+
+http://106.14.219.240
 
 ## Build Setup
 
