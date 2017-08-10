@@ -9,8 +9,6 @@ import loading from '@/components/loading/loading.vue'
 
 Vue.config.productionTip = false
 
-Vue.use(ElementUI)
-
 sync(store, router)
 
 Vue.component('loading', loading);
