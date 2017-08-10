@@ -37,7 +37,7 @@ export default {
 	},
 	beforeRouteEnter(to, from, next) {
 		next((vm) => {
-			vm.getInfo()
+			vm.getInfo(to.params.label)
 		})
 	},
 	beforeRouteUpdate(to, from, next) {
