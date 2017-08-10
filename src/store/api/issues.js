@@ -10,7 +10,7 @@
 import { http, repo, owner } from '@/store/api'
 
 export const getIssues = (labels) => {
-	labels = labels ?  labels : ''
+	labels = labels == 'index' ?  '' : labels
 	return http.get(`repos/${owner}/${repo}/issues?labels=${labels}`)
 }
 

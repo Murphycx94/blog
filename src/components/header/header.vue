@@ -12,8 +12,13 @@
 			<span class="nav-ctrl__line"></span>
 		</div>
 		<ul :class="['nav-menu', { active: showMenu }]">
-			<li class="nav-menu-item" @click="jumpRouter('index', '')"><a href="javascript:;">首页</a></li>
-			<li v-for="label in labels" :title="label.name" class="nav-menu-item" @click="jumpRouter('index', label.name)"><a href="javascript:;">{{ label.name }}</a></li>
+			<li
+			 class="nav-menu-item"
+			 :class="{ 'link-active': linkAactive == 'index' }"
+			 @click="jumpRouter('index', 'index')">
+				<a href="javascript:;">首页</a>
+			</li>
+			<li v-for="label in labels" :class="{ 'link-active': linkAactive == label.name }" :title="label.name" class="nav-menu-item" @click="jumpRouter('index', label.name)"><a href="javascript:;">{{ label.name }}</a></li>
 		</ul>
 	</header>
 </template>
@@ -26,6 +31,7 @@ export default {
 		return {
 			full: false,
 			showMenu: false,
+			linkAactive: 'index',
 		}
 	},
 	computed: {
@@ -37,6 +43,7 @@ export default {
 	},
 	created () {
 		this.getLabels()
+		this.linkAactive = this.$route.params.label
 	},
 	methods: {
 		...mapActions('issues', {
@@ -50,6 +57,7 @@ export default {
 		},
 		jumpRouter (name, label) {
 			this.$router.push({ name, params:{ label } })
+			this.linkAactive = label
 			this.showMenu = false
 		}
 	},

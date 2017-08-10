@@ -49,6 +49,14 @@
 						}
 					}
 				}
+				.link-active {
+					a {
+						&::after {
+							opacity: 1;
+							width: 100%;
+						}
+					}
+				}
 			}
 		}
 		.nav-link {
@@ -60,6 +68,13 @@
 			justify-content: flex-end;
 			flex: 1 1 auto;
 			line-height: 60px;
+			.link-active {
+				&::before,
+				&::after {
+					width: 20px;
+					opacity: 1;
+				}
+			}
 			&-item {
 				display: flex;
 				justify-content: center;
