@@ -1,11 +1,11 @@
 /*
-* @Author: cx
-* @Date:   2017-07-01 11:31:04
-* @Last Modified by:   cx
-* @Last Modified time: 2017年07月25日17:43:54
-*/
+ * @Author: MurphyC 
+ * @Date: 2017-10-02 22:48:25 
+ * @Last Modified by: MurphyC
+ * @Last Modified time: 2017-10-02 22:48:54
+ */
 
-'use strict'
+"use strict"
 
 import Vue    from 'vue'
 import Vuex   from 'vuex'
