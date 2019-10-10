@@ -1,5 +1,5 @@
 {
-  "name": "my-app",
+  "name": "my-blog",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -8,8 +8,8 @@
     "start": "next start"
   },
   "dependencies": {
-    "next": "9.0.7",
-    "react": "16.10.1",
-    "react-dom": "16.10.1"
+    "next": "9.1.1",
+    "react": "16.10.2",
+    "react-dom": "16.10.2"
   }
 }
