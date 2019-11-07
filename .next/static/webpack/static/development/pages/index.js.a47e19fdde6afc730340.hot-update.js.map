@@ -1,1 +1,0 @@
-{"version":3,"file":"static/webpack/static/development/pages/index.js.a47e19fdde6afc730340.hot-update.js","sources":["webpack:///./pages/index.tsx"],"sourcesContent":["import React from 'react'\n\nexport default () => <div>Welcome to next.js!</div>"],"mappings":";;;;;;;;;;;;;;;AAAA;AAEA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;;;;A","sourceRoot":""}
