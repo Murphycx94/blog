@@ -12,7 +12,7 @@ const resolve = _path => path.join(__dirname, '../../', _path)
 module.exports = merge(baseConfig, {
   mode: process.env.NODE_ENV,
   entry: {
-    app: resolve('src/entry/client.js')
+    app: resolve('src/entry/client.jsx')
   },
   output: {
     path: resolve('dist'),

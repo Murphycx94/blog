@@ -5,11 +5,8 @@ export default class App extends Component {
     return { data: 1 }
   }
 
-  componentWillMount () {
-    console.log('User:', this.props.staticContext)
-  }
-
   render() {
+    console.log(this)
     return (
       <div>
         <h1>react-ssr user</h1>

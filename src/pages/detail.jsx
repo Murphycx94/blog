@@ -7,7 +7,6 @@ export default class Index extends Component {
   }
 
   componentDidMount () {
-    console.log(this.props)
   }
 
   render() {

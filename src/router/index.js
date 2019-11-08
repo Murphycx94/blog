@@ -2,7 +2,7 @@ import Detail from '@/pages/detail'
 import User from '@/pages/user'
 import NoMatch from '@/pages/noMatch'
 
-const routes = [
+export default [
   {
     path: '/',
     component: () => import('@/pages/temp')

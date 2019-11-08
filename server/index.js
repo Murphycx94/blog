@@ -12,7 +12,9 @@ app.use('/dist/', express.static(resolve('dist')))
 const htmlTemplate = fs.readFileSync(resolve('dist/index.template.html'), 'utf-8')
 
 const render = (req, res) => {
-  const reactApp = createApp({}, req.url)
+  const reactApp = createApp({
+    name: 'Blog'
+  }, req.url)
   const fragment = ReactDOMServer.renderToString(reactApp)
   const html = htmlTemplate.replace('<!--react-ssr-outlet-->', fragment)
   res.send(html)
